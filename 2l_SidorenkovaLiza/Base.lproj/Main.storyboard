@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DaC-lo-rXN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -113,6 +113,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPw-a1-ffV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19" y="445"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="NxM-tz-rte">
+            <objects>
+                <viewController id="DaC-lo-rXN" customClass="AuthViewController" customModule="_l_SidorenkovaLiza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="suw-Xj-gOU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5G8-AX-NR1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rzj-FE-S9b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5G8-AX-NR1" firstAttribute="trailing" secondItem="rzj-FE-S9b" secondAttribute="trailing" id="0ud-2v-hLH"/>
+                            <constraint firstItem="5G8-AX-NR1" firstAttribute="top" secondItem="suw-Xj-gOU" secondAttribute="top" id="JBr-T6-i9W"/>
+                            <constraint firstAttribute="bottom" secondItem="5G8-AX-NR1" secondAttribute="bottom" id="a5G-sL-Luj"/>
+                            <constraint firstItem="5G8-AX-NR1" firstAttribute="leading" secondItem="rzj-FE-S9b" secondAttribute="leading" id="ukM-Vc-BiM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="5G8-AX-NR1" id="nwi-zb-FUz"/>
+                        <segue destination="cJ5-Yb-N5m" kind="show" identifier="showFriendsSegue" id="YBK-J2-oyY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0E-Sj-83W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150.7246376811595" y="533.70535714285711"/>
+        </scene>
+        <!--Friends Table View Controller-->
+        <scene sceneID="HI0-A4-YfT">
+            <objects>
+                <tableViewController id="cJ5-Yb-N5m" customClass="FriendsTableViewController" customModule="_l_SidorenkovaLiza" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NwR-RV-se7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fRv-yr-zUD">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fRv-yr-zUD" id="CRo-Lr-hwb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cJ5-Yb-N5m" id="hkR-Cv-Qjh"/>
+                            <outlet property="delegate" destination="cJ5-Yb-N5m" id="kTn-E6-5r0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HkR-Wg-3NP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5he-CP-oQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198" y="539"/>
         </scene>
     </scenes>
     <resources>

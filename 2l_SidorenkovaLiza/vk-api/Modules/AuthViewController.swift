@@ -67,7 +67,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         Session.shared.token = token
         Session.shared.userID = userId
             
-            performSegue(withIdentifier: "showFriendsSegue", sender: nil) 
+            performSegue(withIdentifier: "showDubugMenu", sender: nil) 
             
             decisionHandler(.cancel)
         }

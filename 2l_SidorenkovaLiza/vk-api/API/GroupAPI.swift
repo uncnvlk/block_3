@@ -9,11 +9,6 @@ import UIKit
 import Alamofire
 
 
-struct Groups {
-    
-}
-
-
 final class GroupsAPI {
     
     let baseURL = "https://api.vk.com/method/"
@@ -21,7 +16,7 @@ final class GroupsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    func getGroup(completion: @escaping ([Groups])->()) {
+    func getGroups(completion: @escaping ([GroupModels])->()) {
         let method = "groups.get"
         
         let parameters: Parameters  = [
@@ -33,11 +28,24 @@ final class GroupsAPI {
         
         let url = baseURL + method
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.value)
+            
+            guard let data = response.data else { return }
+            debugPrint(response.data?.prettyJSON)
+        
+            do {
+                
+                let groupsJSON = try JSONDecoder().decode(GroupsJSON.self, from: data)
+                
+                let groups = groupsJSON.response.items
+                completion(groups)
+                
+            } catch {
+                print(error)
+            }
         }
     }
     
-    func getSearchGroup(completion: @escaping ([Groups])->()) {
+    func getSearchGroup(completion: @escaping ([GroupModels])->()) {
         let method = "group.search"
         
         let parameters: Parameters  = [

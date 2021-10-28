@@ -28,6 +28,10 @@
 		AD8DCCB82725CA3400431435 /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB72725CA3400431435 /* FriendsAPI.swift */; };
 		AD8DCCBD2725CE7000431435 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */; };
 		ADA60969271DBCA500F23066 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA60968271DBCA500F23066 /* Account.swift */; };
+		ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7447272AACAB00E15D24 /* Data+PrettyJSON.swift */; };
+		ADBD744C272AB46700E15D24 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD744B272AB46700E15D24 /* Friend.swift */; };
+		ADBD7453272AC49E00E15D24 /* GroupTableViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */; };
+		ADBD7456272AC4D300E15D24 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7455272AC4D300E15D24 /* Group.swift */; };
 		ADDFBDC426FF724A00EDC48D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDFBDC326FF724A00EDC48D /* News.storyboard */; };
 		ADDFBDC626FF725900EDC48D /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFBDC526FF725900EDC48D /* NewsController.swift */; };
 		ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFBDC826FF73BC00EDC48D /* NewsTableViewCell.swift */; };
@@ -59,6 +63,10 @@
 		AD8DCCB72725CA3400431435 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
 		AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		ADA60968271DBCA500F23066 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		ADBD7447272AACAB00E15D24 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
+		ADBD744B272AB46700E15D24 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController..swift; sourceTree = "<group>"; };
+		ADBD7455272AC4D300E15D24 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		ADDFBDC326FF724A00EDC48D /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		ADDFBDC526FF725900EDC48D /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		ADDFBDC826FF73BC00EDC48D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,16 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				AD8DCCAE2725B3D300431435 /* vk-api */,
-				AD7C8F8726EF55380067D012 /* SceneDelegate.swift */,
-				ADA60968271DBCA500F23066 /* Account.swift */,
-				AD7C8F8526EF55380067D012 /* AppDelegate.swift */,
-				AD7C8F8926EF55380067D012 /* ViewController.swift */,
-				AD7C8F8B26EF55380067D012 /* Main.storyboard */,
 				AD7C8F8E26EF553B0067D012 /* Assets.xcassets */,
-				AD7C8F9026EF553B0067D012 /* LaunchScreen.storyboard */,
 				AD7C8F9326EF553B0067D012 /* Info.plist */,
-				AD7C8FA726EF72320067D012 /* R.swift */,
-				ADDFBDC026FF70AE00EDC48D /* Debug */,
 			);
 			path = 2l_SidorenkovaLiza;
 			sourceTree = "<group>";
@@ -125,8 +125,14 @@
 		AD8DCCAE2725B3D300431435 /* vk-api */ = {
 			isa = PBXGroup;
 			children = (
-				AD8DCCB62725CA0D00431435 /* Services */,
 				AD8DCCB52725C9FE00431435 /* Modules */,
+				ADBD7445272AA30B00E15D24 /* API */,
+				ADBD7451272AC46200E15D24 /* Groups */,
+				ADBD744D272AB4CE00E15D24 /* Friends */,
+				ADDFBDC026FF70AE00EDC48D /* Debug */,
+				ADBD7446272AAC8A00E15D24 /* Helper */,
+				AD8DCCB62725CA0D00431435 /* Services */,
+				ADBD7450272AC3F800E15D24 /* Others */,
 			);
 			path = "vk-api";
 			sourceTree = "<group>";
@@ -135,7 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				AD8DCCB12725B45600431435 /* AuthViewController.swift */,
-				AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */,
+				AD7C8F8926EF55380067D012 /* ViewController.swift */,
+				AD7C8F8B26EF55380067D012 /* Main.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -143,12 +150,65 @@
 		AD8DCCB62725CA0D00431435 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD7C8FA726EF72320067D012 /* R.swift */,
+				ADA60968271DBCA500F23066 /* Account.swift */,
 				AD8DCCB32725C63600431435 /* Session.swift */,
-				AD8DCCB72725CA3400431435 /* FriendsAPI.swift */,
-				AD21E39B2726A08500D6EB69 /* GroupAPI.swift */,
-				AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		ADBD7445272AA30B00E15D24 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AD8DCCB72725CA3400431435 /* FriendsAPI.swift */,
+				AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */,
+				AD21E39B2726A08500D6EB69 /* GroupAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ADBD7446272AAC8A00E15D24 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				ADBD7447272AACAB00E15D24 /* Data+PrettyJSON.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		ADBD7449272AB41000E15D24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADBD744B272AB46700E15D24 /* Friend.swift */,
+				ADBD7455272AC4D300E15D24 /* Group.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ADBD744D272AB4CE00E15D24 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */,
+				ADBD7449272AB41000E15D24 /* Models */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		ADBD7450272AC3F800E15D24 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C8F8726EF55380067D012 /* SceneDelegate.swift */,
+				AD7C8F8526EF55380067D012 /* AppDelegate.swift */,
+				AD7C8F9026EF553B0067D012 /* LaunchScreen.storyboard */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		ADBD7451272AC46200E15D24 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		ADDFBDBF26FF70A200EDC48D /* Friends */ = {
@@ -166,7 +226,7 @@
 			children = (
 				AD7C8FAD26EF75BD0067D012 /* DebugViewController.swift */,
 				AD7C8FAF26EF76E20067D012 /* DebugMenu.storyboard */,
-				ADEEA6892722B2F500DC134F /* New Group */,
+				ADEEA6892722B2F500DC134F /* MyProfile */,
 				ADDFBDC226FF722600EDC48D /* News */,
 				ADDFBDBF26FF70A200EDC48D /* Friends */,
 			);
@@ -192,13 +252,13 @@
 			path = NewsBasic;
 			sourceTree = "<group>";
 		};
-		ADEEA6892722B2F500DC134F /* New Group */ = {
+		ADEEA6892722B2F500DC134F /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
 				ADEEA6872722B2F000DC134F /* Profile.storyboard */,
 				ADEEA68A2722B31A00DC134F /* ProfileController.swift */,
 			);
-			path = "New Group";
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +343,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBD7456272AC4D300E15D24 /* Group.swift in Sources */,
 				ADDFBDC626FF725900EDC48D /* NewsController.swift in Sources */,
 				AD7C8F8A26EF55380067D012 /* ViewController.swift in Sources */,
 				AD8DCCB82725CA3400431435 /* FriendsAPI.swift in Sources */,
+				ADBD7453272AC49E00E15D24 /* GroupTableViewController..swift in Sources */,
 				AD7C8F8626EF55380067D012 /* AppDelegate.swift in Sources */,
 				AD7C8FA826EF72320067D012 /* R.swift in Sources */,
 				AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */,
@@ -296,8 +358,10 @@
 				AD120E1E26F36FF4000BE9E1 /* FriendsViewController.swift in Sources */,
 				ADEEA68B2722B31A00DC134F /* ProfileController.swift in Sources */,
 				AD7C8FAE26EF75BD0067D012 /* DebugViewController.swift in Sources */,
+				ADBD744C272AB46700E15D24 /* Friend.swift in Sources */,
 				AD120E2426F37180000BE9E1 /* BasicTableViewCell.swift in Sources */,
 				AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */,
+				ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */,
 				ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */,
 				AD8DCCBD2725CE7000431435 /* FriendsTableViewController.swift in Sources */,
 			);

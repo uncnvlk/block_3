@@ -37,7 +37,23 @@ final class PhotosAPI {
         
         let url = baseURL + method
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.value)
+            
+            guard let data = response.data else { return }
+            debugPrint(response.data?.prettyJSON)
+            
+            //print(response.value)
+            
+//            do {
+//
+//                let photosJSON = try JSONDecoder().decode(PhotosJSON.self, from: data)
+//
+//                let photos = photosJSON.response.items
+//                completion(photos)
+//
+//            } catch {
+//                print(error)
+//            }
+
         }
     }
 

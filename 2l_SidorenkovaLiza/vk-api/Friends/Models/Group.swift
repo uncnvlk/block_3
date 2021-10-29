@@ -1,4 +1,5 @@
-import Foundation
+import UIKit
+import RealmSwift
 
 // MARK: - GroupsJSON
 struct GroupsJSON: Codable {
@@ -12,14 +13,14 @@ struct ResponseGr: Codable {
 }
 
 // MARK: - Item
-struct GroupModels: Codable {
-    let isMember, id: Int
-    let photo100: String
-    let isAdvertiser, isAdmin: Int
-    let photo50, photo200: String
+class GroupModels: Object ,Codable {
+    @objc dynamic var isMember, id: Int
+    @objc dynamic var photo100: String
+    @objc dynamic var isAdvertiser, isAdmin: Int
+    @objc dynamic var photo50, photo200: String
     let type: TypeEnum
-    let screenName, name: String
-    let isClosed: Int
+    @objc dynamic var screenName, name: String
+    @objc dynamic var isClosed: Int
 
     enum CodingKeys: String, CodingKey {
         case isMember = "is_member"

@@ -13,6 +13,9 @@
 		AD120E2526F37180000BE9E1 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */; };
 		AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */; };
 		AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39B2726A08500D6EB69 /* GroupAPI.swift */; };
+		AD586C78272C09F800B9F9CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C77272C09F800B9F9CC /* Realm */; };
+		AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C79272C09F800B9F9CC /* RealmSwift */; };
+		AD586C7C272C129D00B9F9CC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD586C7B272C129D00B9F9CC /* Photo.swift */; };
 		AD7C8F8626EF55380067D012 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8526EF55380067D012 /* AppDelegate.swift */; };
 		AD7C8F8826EF55380067D012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8726EF55380067D012 /* SceneDelegate.swift */; };
 		AD7C8F8A26EF55380067D012 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8926EF55380067D012 /* ViewController.swift */; };
@@ -26,7 +29,6 @@
 		AD8DCCB22725B45600431435 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB12725B45600431435 /* AuthViewController.swift */; };
 		AD8DCCB42725C63700431435 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB32725C63600431435 /* Session.swift */; };
 		AD8DCCB82725CA3400431435 /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB72725CA3400431435 /* FriendsAPI.swift */; };
-		AD8DCCBD2725CE7000431435 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */; };
 		ADA60969271DBCA500F23066 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA60968271DBCA500F23066 /* Account.swift */; };
 		ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7447272AACAB00E15D24 /* Data+PrettyJSON.swift */; };
 		ADBD744C272AB46700E15D24 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD744B272AB46700E15D24 /* Friend.swift */; };
@@ -47,6 +49,7 @@
 		AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		AD21E39B2726A08500D6EB69 /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		AD586C7B272C129D00B9F9CC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2l_SidorenkovaLiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7C8F8526EF55380067D012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7C8F8726EF55380067D012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		AD8DCCB12725B45600431435 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AD8DCCB32725C63600431435 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AD8DCCB72725CA3400431435 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
-		AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		ADA60968271DBCA500F23066 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		ADBD7447272AACAB00E15D24 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		ADBD744B272AB46700E15D24 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -80,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */,
+				AD586C78272C09F800B9F9CC /* Realm in Frameworks */,
 				AD8DCCAC2725B3A600431435 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				ADBD744B272AB46700E15D24 /* Friend.swift */,
+				AD586C7B272C129D00B9F9CC /* Photo.swift */,
 				ADBD7455272AC4D300E15D24 /* Group.swift */,
 			);
 			path = Models;
@@ -187,7 +192,6 @@
 		ADBD744D272AB4CE00E15D24 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				AD8DCCBC2725CE7000431435 /* FriendsTableViewController.swift */,
 				ADBD7449272AB41000E15D24 /* Models */,
 			);
 			path = Friends;
@@ -279,6 +283,8 @@
 			name = 2l_SidorenkovaLiza;
 			packageProductDependencies = (
 				AD8DCCAB2725B3A600431435 /* Alamofire */,
+				AD586C77272C09F800B9F9CC /* Realm */,
+				AD586C79272C09F800B9F9CC /* RealmSwift */,
 			);
 			productName = 2l_SidorenkovaLiza;
 			productReference = AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */;
@@ -309,6 +315,7 @@
 			mainGroup = AD7C8F7926EF55380067D012;
 			packageReferences = (
 				AD8DCCAA2725B3A600431435 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = AD7C8F8326EF55380067D012 /* Products */;
 			projectDirPath = "";
@@ -361,9 +368,9 @@
 				ADBD744C272AB46700E15D24 /* Friend.swift in Sources */,
 				AD120E2426F37180000BE9E1 /* BasicTableViewCell.swift in Sources */,
 				AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */,
+				AD586C7C272C129D00B9F9CC /* Photo.swift in Sources */,
 				ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */,
 				ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */,
-				AD8DCCBD2725CE7000431435 /* FriendsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +572,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
 		AD8DCCAA2725B3A600431435 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -576,6 +591,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AD586C77272C09F800B9F9CC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		AD586C79272C09F800B9F9CC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		AD8DCCAB2725B3A600431435 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD8DCCAA2725B3A600431435 /* XCRemoteSwiftPackageReference "Alamofire" */;

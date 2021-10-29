@@ -33,7 +33,7 @@ final class FriendsAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let data = response.data else { return }
-            debugPrint(response.data?.prettyJSON)
+            //debugPrint(response.data?.prettyJSON)
             
             //print(response.value)
             

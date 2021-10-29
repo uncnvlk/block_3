@@ -1,6 +1,5 @@
-
-
-import Foundation
+import UIKit
+import RealmSwift
 
 // MARK: - FriendsJSON
 struct FriendsJSON: Codable {
@@ -14,12 +13,14 @@ struct ResponseFr: Codable {
 }
 
 // MARK: - Item
-struct FriendModels: Codable {
-    let id: Int
-    let lastName: String
-    let photo50: String
-    let trackCode, firstName: String
-    let photo100: String
+
+// Realm(), class
+class FriendModels: Object, Codable {
+    @objc dynamic var id: Int
+    @objc dynamic var lastName: String
+    @objc dynamic var photo50: String
+    @objc dynamic var trackCode, firstName: String
+    @objc dynamic var photo100: String
 
     var fullName: String {
         firstName + " " + lastName

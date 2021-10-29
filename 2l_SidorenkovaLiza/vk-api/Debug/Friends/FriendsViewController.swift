@@ -13,16 +13,23 @@ class FriendsViewController: UIViewController {
     
     private var searchController: UISearchController!
     
-    private var FriendItem: [FriendsDisplayItem] = []
+    private var FriendItem: [FriendModels] = []
     
-    private var SearchFriendItem: [FriendsDisplayItem] = []
+    private var SearchFriendItem: [FriendModels] = []
     
+    let friendsService = FriendsAPI()
+    let photosService = PhotosAPI()
+    let groupsService = GroupsAPI()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(R.Nib.basic, forCellReuseIdentifier: R.Cell.basic)
-        self.getData()
+        //self.getData()
+        friendsService.getFriends{ [weak self] friends in
+            self?.FriendItem = friends
+            self?.tableView.reloadData()
+        }
         
         searchController = UISearchController(searchResultsController: nil)
                 tableView.tableHeaderView = searchController.searchBar
@@ -30,16 +37,9 @@ class FriendsViewController: UIViewController {
     }
     
     private func getData() {
-        let mockItems: [FriendsDisplayItem] = [
-            .init(friend: "Олег"),
-            .init(friend: "Катя"),
-            .init(friend: "Саша"),
-            .init(friend: "Никитa")
-        ]
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.FriendItem = mockItems
-            self.tableView.reloadData()
+        friendsService.getFriends{ [weak self] friends in
+            self?.FriendItem = friends
+            self?.tableView.reloadData()
         }
     }
 }
@@ -94,8 +94,8 @@ extension FriendsViewController: UISearchResultsUpdating {
             }
         }
         func filterContent(searchText: String){
-            SearchFriendItem = FriendItem.filter({(FriendsSome: FriendsDisplayItem) -> Bool in
-                let nameMatch = FriendsSome.friend.range(of: searchText)
+            SearchFriendItem = FriendItem.filter({(FriendsSome: FriendModels) -> Bool in
+                let nameMatch = FriendsSome.fullName.range(of: searchText)
                 return nameMatch != nil
             })
         }

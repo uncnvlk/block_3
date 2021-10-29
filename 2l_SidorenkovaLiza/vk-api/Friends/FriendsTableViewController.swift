@@ -9,6 +9,8 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
+    private var searchController: UISearchController!
+    
     let friendsService = FriendsAPI()
     let photosService = PhotosAPI()
     let groupsService = GroupsAPI()
@@ -26,11 +28,17 @@ class FriendsTableViewController: UITableViewController {
             self?.tableView.reloadData()
         }
         
-        /*photosService.getPhotos { photos in
-            print("Получили фото в контроллере")
-        }
+        searchController = UISearchController(searchResultsController: nil)
+                tableView.tableHeaderView = searchController.searchBar
+                searchController.searchResultsUpdater = self
         
-        groupsService.getGroup { groups in
+        
+        
+//        photosService.getPhotos { photos in
+//            print("Получили фото в контроллере")
+//        }
+        
+        /*groupsService.getGroup { groups in
             print("Получили список групп в контроллере")
         }
         
@@ -58,4 +66,42 @@ class FriendsTableViewController: UITableViewController {
     }
 
 
+}
+
+extension FriendsTableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if searchController.isActive {
+                    (cell as? BasicTableViewCell)?.configure(with: self.SearchFriendItem[indexPath.row])
+                } else {
+                    (cell as? BasicTableViewCell)?.configure(with: self.friends[indexPath.row])
+                }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            if searchController.isActive {
+                return false
+            } else {
+                return true
+            }
+}
+}
+
+extension FriendsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+            if let searchText = searchController.searchBar.text {
+                filterContent(searchText: searchText)
+                tableView.reloadData()
+            }
+        }
+        func filterContent(searchText: String){
+            SearchFriendItem = FriendItem.filter({(FriendsSome: FriendsDisplayItem) -> Bool in
+                let nameMatch = FriendsSome.friend.range(of: searchText)
+                return nameMatch != nil
+            })
+        }
 }

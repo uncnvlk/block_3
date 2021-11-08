@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendsViewController: UIViewController {
     
@@ -13,7 +14,7 @@ class FriendsViewController: UIViewController {
     
     private var searchController: UISearchController!
     
-    private var FriendItem: [FriendModels] = []
+    //private var FriendItem: [FriendModels] = []
     
     private var SearchFriendItem: [FriendModels] = []
     
@@ -21,14 +22,28 @@ class FriendsViewController: UIViewController {
     let photosService = PhotosAPI()
     let groupsService = GroupsAPI()
     
-    
+    let friendsDB = FriendsDB()
+    var friends: Results<FriendModels>?
+    var token: NotificationToken?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(R.Nib.basic, forCellReuseIdentifier: R.Cell.basic)
         //self.getData()
         friendsService.getFriends{ [weak self] friends in
-            self?.FriendItem = friends
-            self?.tableView.reloadData()
+            
+            guard let self = self else {return}
+            let friendsOld = self.friendsDB.load()
+            
+            friendsOld.forEach {
+                self.friendsDB.delete($0)
+            }
+            
+            self.friendsDB.save(friends)
+            self.friends = self.friendsDB.load()
+            self.tableView.reloadData()
+//            self?.FriendItem = friends
+//            self?.tableView.reloadData()
         }
         
         searchController = UISearchController(searchResultsController: nil)
@@ -36,12 +51,12 @@ class FriendsViewController: UIViewController {
                 searchController.searchResultsUpdater = self
     }
     
-    private func getData() {
-        friendsService.getFriends{ [weak self] friends in
-            self?.FriendItem = friends
-            self?.tableView.reloadData()
-        }
-    }
+//    private func getData() {
+//        friendsService.getFriends{ [weak self] friends in
+//            self?.friends = friends
+//            self?.tableView.reloadData()
+//        }
+//    }
 }
 
 extension FriendsViewController: UITableViewDataSource {
@@ -51,7 +66,8 @@ extension FriendsViewController: UITableViewDataSource {
         if searchController.isActive {
                     return SearchFriendItem.count
                 } else {
-                    return self.FriendItem.count
+                    guard friends != nil else {return 0}
+                    return self.friends!.count
                 }
     }
     
@@ -69,7 +85,7 @@ extension FriendsViewController: UITableViewDelegate {
         if searchController.isActive {
                     (cell as? BasicTableViewCell)?.configure(with: self.SearchFriendItem[indexPath.row])
                 } else {
-                    (cell as? BasicTableViewCell)?.configure(with: self.FriendItem[indexPath.row])
+                    (cell as? BasicTableViewCell)?.configure(with: self.friends![indexPath.row])
                 }
     }
     
@@ -94,7 +110,7 @@ extension FriendsViewController: UISearchResultsUpdating {
             }
         }
         func filterContent(searchText: String){
-            SearchFriendItem = FriendItem.filter({(FriendsSome: FriendModels) -> Bool in
+            SearchFriendItem = friends!.filter({(FriendsSome: FriendModels) -> Bool in
                 let nameMatch = FriendsSome.fullName.range(of: searchText)
                 return nameMatch != nil
             })

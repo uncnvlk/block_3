@@ -27,13 +27,13 @@ struct ResponsePh: Codable {
 // MARK: - Item
 class PhotoModels: Object, Codable {
     @objc dynamic var albumID: Int
-    @objc dynamic var reposts: Reposts
+    var reposts: Reposts
     @objc dynamic var postID, id, date: Int
     @objc dynamic var text: String
-    @objc dynamic var sizes: [Size]
+    var sizes: [Size]
     @objc dynamic var hasTags: Bool
     @objc dynamic var ownerID: Int
-    @objc dynamic var likes: Likes
+    var likes: Likes
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
@@ -47,7 +47,7 @@ class PhotoModels: Object, Codable {
 }
 
 // MARK: - Likes
-class Likes: Object, Codable {
+class Likes: Codable {
     let userLikes, count: Int
 
     enum CodingKeys: String, CodingKey {
@@ -57,12 +57,12 @@ class Likes: Object, Codable {
 }
 
 // MARK: - Reposts
-class Reposts: Object, Codable {
+class Reposts: Codable {
     let count: Int
 }
 
 // MARK: - Size
-class Size: Object, Codable {
+class Size: Codable {
     let width, height: Int
     let url: String
     let type: String

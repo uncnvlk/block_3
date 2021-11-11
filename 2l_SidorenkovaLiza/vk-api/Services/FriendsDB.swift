@@ -20,6 +20,7 @@ final class FriendsDB: FriendsDBProtocol {
     
     func save(_ items: [FriendModels]) {
         let realm = try! Realm()
+        
         try! realm.write {
             realm.add(items)
         } 
@@ -32,8 +33,10 @@ final class FriendsDB: FriendsDBProtocol {
         print(realm.configuration.fileURL ?? "")
         return friends
     }
+    
     func delete(_ items: FriendModels) {
         let realm = try! Realm()
+        
         //Асинхронное API
         try! realm.write {
             realm.delete(items)

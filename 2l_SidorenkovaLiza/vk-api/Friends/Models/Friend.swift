@@ -22,7 +22,7 @@ class FriendModels: Object, Codable {
     @objc dynamic var trackCode, firstName: String
     @objc dynamic var photo100: String
 
-    var fullName: String {
+    @objc dynamic var fullName: String {
         firstName + " " + lastName
     }
     

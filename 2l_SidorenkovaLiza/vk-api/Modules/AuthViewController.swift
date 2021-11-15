@@ -7,9 +7,11 @@
 
 import UIKit
 import WebKit
+import Firebase
 
 class AuthViewController: UIViewController, WKNavigationDelegate {
 
+    let ref = Database.database().reference(withPath: "Users")
   
     @IBOutlet weak var webView: WKWebView! {
     didSet{
@@ -63,6 +65,9 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         guard let token = params["access_token"], let userId = params["user_id"] else {return}
             
             print(token)
+        
+        let firebaseUser = FirebaseUser(id: userId)
+        self.ref.setValue(firebaseUser.toAnyObject())
         
         Session.shared.token = token
         Session.shared.userID = userId

@@ -27,13 +27,13 @@ struct ResponsePh: Codable {
 // MARK: - Item
 class PhotoModels: Object, Codable {
     @objc dynamic var albumID: Int
-    var reposts: Reposts
+    var reposts: Reposts?
     @objc dynamic var postID, id, date: Int
     @objc dynamic var text: String
     var sizes: [Size]
     @objc dynamic var hasTags: Bool
     @objc dynamic var ownerID: Int
-    var likes: Likes
+    var likes: Likes?
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"

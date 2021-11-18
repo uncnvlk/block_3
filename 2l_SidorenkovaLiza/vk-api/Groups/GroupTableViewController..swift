@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class GroupTableViewController: UITableViewController {
 
@@ -16,7 +16,7 @@ class GroupTableViewController: UITableViewController {
 
         var groups: [GroupModels] = []
     
-        let ref = Database.database().reference(withPath: "Groups")
+//        let ref = Database.database().reference(withPath: "Groups")
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -56,13 +56,13 @@ class GroupTableViewController: UITableViewController {
             cell.textLabel?.text = group.name
 
             
-            let userId = Session.shared.userID
-            var groupsMas: [String] = []
-            self.groups.forEach {
-            groupsMas.append($0.name)
-            }
-            let firebaseUser = FirebaseUser(id: String(userId), groups: groupsMas)
-            ref.setValue(firebaseUser.toAnyObject)
+//            let userId = Session.shared.userID
+//            var groupsMas: [String] = []
+//            self.groups.forEach {
+//            groupsMas.append($0.name)
+//            }
+//            let firebaseUser = FirebaseUser(id: String(userId), groups: groupsMas)
+//            ref.setValue(firebaseUser.toAnyObject)
             
             return cell
         }

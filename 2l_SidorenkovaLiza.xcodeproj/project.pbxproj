@@ -16,13 +16,17 @@
 		AD120E2526F37180000BE9E1 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */; };
 		AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */; };
 		AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39B2726A08500D6EB69 /* GroupAPI.swift */; };
+		AD22EE432770CA56000F5803 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD22EE422770CA56000F5803 /* PromiseKit */; };
+		AD22EE452770CE1E000F5803 /* GroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22EE442770CE1E000F5803 /* GroupsDB.swift */; };
+		AD31F0A2275D2E68001F397D /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A1275D2E68001F397D /* ParseData.swift */; };
+		AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A3275D2EE4001F397D /* PresentSwift.swift */; };
+		AD31F0A6275D2F80001F397D /* getDataFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A5275D2F80001F397D /* getDataFromURL.swift */; };
 		AD3F7CC2273933D6001CCF4F /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */; };
 		AD586C78272C09F800B9F9CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C77272C09F800B9F9CC /* Realm */; };
 		AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C79272C09F800B9F9CC /* RealmSwift */; };
 		AD586C7C272C129D00B9F9CC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD586C7B272C129D00B9F9CC /* Photo.swift */; };
 		AD7C8F8626EF55380067D012 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8526EF55380067D012 /* AppDelegate.swift */; };
 		AD7C8F8826EF55380067D012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8726EF55380067D012 /* SceneDelegate.swift */; };
-		AD7C8F8A26EF55380067D012 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8F8926EF55380067D012 /* ViewController.swift */; };
 		AD7C8F8D26EF55380067D012 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7C8F8B26EF55380067D012 /* Main.storyboard */; };
 		AD7C8F8F26EF553B0067D012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7C8F8E26EF553B0067D012 /* Assets.xcassets */; };
 		AD7C8F9226EF553B0067D012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7C8F9026EF553B0067D012 /* LaunchScreen.storyboard */; };
@@ -41,10 +45,11 @@
 		ADBD744C272AB46700E15D24 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD744B272AB46700E15D24 /* Friend.swift */; };
 		ADBD7453272AC49E00E15D24 /* GroupTableViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */; };
 		ADBD7456272AC4D300E15D24 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD7455272AC4D300E15D24 /* Group.swift */; };
+		ADC4E84A275250FD00659E10 /* NewTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4E848275250FC00659E10 /* NewTextTableViewCell.swift */; };
 		ADDFBDC426FF724A00EDC48D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDFBDC326FF724A00EDC48D /* News.storyboard */; };
 		ADDFBDC626FF725900EDC48D /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFBDC526FF725900EDC48D /* NewsController.swift */; };
-		ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFBDC826FF73BC00EDC48D /* NewsTableViewCell.swift */; };
 		ADDFBDCB26FF73BC00EDC48D /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDFBDC926FF73BC00EDC48D /* NewsTableViewCell.xib */; };
+		ADEE8FF92795AC1F006896D6 /* VKAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE8FF82795AC1F006896D6 /* VKAdapter.swift */; };
 		ADEEA6882722B2F000DC134F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEEA6872722B2F000DC134F /* Profile.storyboard */; };
 		ADEEA68B2722B31A00DC134F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA68A2722B31A00DC134F /* ProfileController.swift */; };
 /* End PBXBuildFile section */
@@ -57,12 +62,15 @@
 		AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		AD21E39B2726A08500D6EB69 /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		AD22EE442770CE1E000F5803 /* GroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDB.swift; sourceTree = "<group>"; };
+		AD31F0A1275D2E68001F397D /* ParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
+		AD31F0A3275D2EE4001F397D /* PresentSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentSwift.swift; sourceTree = "<group>"; };
+		AD31F0A5275D2F80001F397D /* getDataFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataFromURL.swift; sourceTree = "<group>"; };
 		AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
 		AD586C7B272C129D00B9F9CC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2l_SidorenkovaLiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7C8F8526EF55380067D012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7C8F8726EF55380067D012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD7C8F8926EF55380067D012 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD7C8F8C26EF55380067D012 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD7C8F8E26EF553B0067D012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7C8F9126EF553B0067D012 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,10 +88,11 @@
 		ADBD744B272AB46700E15D24 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController..swift; sourceTree = "<group>"; };
 		ADBD7455272AC4D300E15D24 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		ADC4E848275250FC00659E10 /* NewTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTextTableViewCell.swift; sourceTree = "<group>"; };
 		ADDFBDC326FF724A00EDC48D /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		ADDFBDC526FF725900EDC48D /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
-		ADDFBDC826FF73BC00EDC48D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		ADDFBDC926FF73BC00EDC48D /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		ADEE8FF82795AC1F006896D6 /* VKAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAdapter.swift; sourceTree = "<group>"; };
 		ADEEA6872722B2F000DC134F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		ADEEA68A2722B31A00DC134F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +107,7 @@
 				AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */,
 				AD586C78272C09F800B9F9CC /* Realm in Frameworks */,
 				AD8DCCAC2725B3A600431435 /* Alamofire in Frameworks */,
+				AD22EE432770CA56000F5803 /* PromiseKit in Frameworks */,
 				AD0F422B2742A4EB0078E088 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +122,16 @@
 				AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		AD31F0A0275D2C0F001F397D /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				AD31F0A1275D2E68001F397D /* ParseData.swift */,
+				AD31F0A3275D2EE4001F397D /* PresentSwift.swift */,
+				AD31F0A5275D2F80001F397D /* getDataFromURL.swift */,
+			);
+			path = Operation;
 			sourceTree = "<group>";
 		};
 		AD7C8F7926EF55380067D012 = {
@@ -159,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				AD8DCCB12725B45600431435 /* AuthViewController.swift */,
-				AD7C8F8926EF55380067D012 /* ViewController.swift */,
 				AD7C8F8B26EF55380067D012 /* Main.storyboard */,
 			);
 			path = Modules;
@@ -170,8 +189,10 @@
 			children = (
 				AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */,
 				AD7C8FA726EF72320067D012 /* R.swift */,
+				AD22EE442770CE1E000F5803 /* GroupsDB.swift */,
 				ADA60968271DBCA500F23066 /* Account.swift */,
 				AD8DCCB32725C63600431435 /* Session.swift */,
+				ADEE8FF82795AC1F006896D6 /* VKAdapter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,6 +230,7 @@
 		ADBD744D272AB4CE00E15D24 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				AD31F0A0275D2C0F001F397D /* Operation */,
 				ADBD7449272AB41000E15D24 /* Models */,
 			);
 			path = Friends;
@@ -268,8 +290,8 @@
 		ADDFBDC726FF73A100EDC48D /* NewsBasic */ = {
 			isa = PBXGroup;
 			children = (
-				ADDFBDC826FF73BC00EDC48D /* NewsTableViewCell.swift */,
 				ADDFBDC926FF73BC00EDC48D /* NewsTableViewCell.xib */,
+				ADC4E848275250FC00659E10 /* NewTextTableViewCell.swift */,
 			);
 			path = NewsBasic;
 			sourceTree = "<group>";
@@ -306,6 +328,7 @@
 				AD0F422A2742A4EB0078E088 /* FirebaseAuth */,
 				AD0F422C2742A4EB0078E088 /* FirebaseDatabase */,
 				ADB293E62746B45300759663 /* SwiftyJSON */,
+				AD22EE422770CA56000F5803 /* PromiseKit */,
 			);
 			productName = 2l_SidorenkovaLiza;
 			productReference = AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */;
@@ -339,6 +362,7 @@
 				AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				AD0F42292742A4EB0078E088 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				ADB293E52746B45300759663 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = AD7C8F8326EF55380067D012 /* Products */;
 			projectDirPath = "";
@@ -375,16 +399,20 @@
 			files = (
 				ADBD7456272AC4D300E15D24 /* Group.swift in Sources */,
 				ADDFBDC626FF725900EDC48D /* NewsController.swift in Sources */,
-				AD7C8F8A26EF55380067D012 /* ViewController.swift in Sources */,
+				AD31F0A2275D2E68001F397D /* ParseData.swift in Sources */,
 				AD8DCCB82725CA3400431435 /* FriendsAPI.swift in Sources */,
 				ADBD7453272AC49E00E15D24 /* GroupTableViewController..swift in Sources */,
 				AD0F422F2742A5AB0078E088 /* FirebaseUser.swift in Sources */,
 				AD7C8F8626EF55380067D012 /* AppDelegate.swift in Sources */,
+				ADC4E84A275250FD00659E10 /* NewTextTableViewCell.swift in Sources */,
 				AD7C8FA826EF72320067D012 /* R.swift in Sources */,
 				AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */,
+				ADEE8FF92795AC1F006896D6 /* VKAdapter.swift in Sources */,
+				AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */,
 				AD8DCCB22725B45600431435 /* AuthViewController.swift in Sources */,
 				AD3F7CC2273933D6001CCF4F /* FriendsDB.swift in Sources */,
 				AD7C8F8826EF55380067D012 /* SceneDelegate.swift in Sources */,
+				AD31F0A6275D2F80001F397D /* getDataFromURL.swift in Sources */,
 				ADA60969271DBCA500F23066 /* Account.swift in Sources */,
 				AD8DCCB42725C63700431435 /* Session.swift in Sources */,
 				AD120E1E26F36FF4000BE9E1 /* FriendsViewController.swift in Sources */,
@@ -396,7 +424,7 @@
 				AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */,
 				AD586C7C272C129D00B9F9CC /* Photo.swift in Sources */,
 				ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */,
-				ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */,
+				AD22EE452770CE1E000F5803 /* GroupsDB.swift in Sources */,
 				ADB293E227467E1500759663 /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +635,14 @@
 				minimumVersion = 8.9.1;
 			};
 		};
+		AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.16.2;
+			};
+		};
 		AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -643,6 +679,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD0F42292742A4EB0078E088 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		AD22EE422770CA56000F5803 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		AD586C77272C09F800B9F9CC /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

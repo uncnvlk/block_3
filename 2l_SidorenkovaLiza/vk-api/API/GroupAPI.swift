@@ -7,9 +7,14 @@
 
 import UIKit
 import Alamofire
+import PromiseKit
 
+protocol GroupsAPIProtocol {
+    func getGroups(completion: @escaping ([GroupModels])->())
+    func getSearchGroup(completion: @escaping ([GroupModels])->())
+}
 
-final class GroupsAPI {
+final class GroupsAPI: GroupsAPIProtocol {
     
     let baseURL = "https://api.vk.com/method/"
     let token = Session.shared.token
@@ -30,12 +35,10 @@ final class GroupsAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let data = response.data else { return }
-            //debugPrint(response.data?.prettyJSON)
-        
+            
             do {
                 
                 let groupsJSON = try JSONDecoder().decode(GroupsJSON.self, from: data)
-                
                 let groups = groupsJSON.response.items
                 completion(groups)
                 
@@ -43,6 +46,7 @@ final class GroupsAPI {
                 print(error)
             }
         }
+        
     }
     
     func getSearchGroup(completion: @escaping ([GroupModels])->()) {
@@ -60,8 +64,4 @@ final class GroupsAPI {
             print(response.value)
         }
     }
-
-    
-    
-
 }

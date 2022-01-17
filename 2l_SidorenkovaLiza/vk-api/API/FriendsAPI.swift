@@ -8,15 +8,16 @@
 import UIKit
 import Alamofire
 
+protocol FriendsAPIProtocol {
+    func getFriends(completion: @escaping ([FriendModels])->())
+}
 
-final class FriendsAPI {
+final class FriendsAPI: FriendsAPIProtocol {
     
     let baseURL = "https://api.vk.com/method/"
     let token = Session.shared.token
     let userId = Session.shared.userID
     let version = "5.81"
-    
-    //let newsJSON = try? newJSONDecoder().decode(FriendsJSON.self, from: jsonData)
     
     func getFriends(completion: @escaping ([FriendModels])->()) {
         let method = "friends.get"
@@ -34,14 +35,10 @@ final class FriendsAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let data = response.data else { return }
-            //debugPrint(response.data?.prettyJSON)
-            
-            //print(response.value)
             
             do {
                 
                 let friendsJSON = try JSONDecoder().decode(FriendsJSON.self, from: data)
-                
                 let friends = friendsJSON.response.items
                 completion(friends)
                 

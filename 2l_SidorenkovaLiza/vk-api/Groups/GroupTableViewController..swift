@@ -15,19 +15,26 @@ class GroupTableViewController: UITableViewController {
         let photosService = PhotosAPI()
         let groupsService = GroupsAPI()
         let groupDB = GroupsDB()
-    
+       
         var groups: Results <GroupModels>?
 
     
         override func viewDidLoad() {
             super.viewDidLoad()
             let VKAdapter = VKAdapter(adaptee: groupDB)
+            let proxy = GroupsProxy(groupsService: VKAdapter)
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
             
+            proxy.getGroups { [weak self] groups in
+                self.groups = groups
+             
+            }
             groupsService.getGroups()
         }
 
 
+
+        
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
             guard groups != nil else { return 0 }

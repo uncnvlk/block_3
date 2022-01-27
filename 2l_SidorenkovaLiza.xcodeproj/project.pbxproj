@@ -33,6 +33,7 @@
 		AD7C8FA826EF72320067D012 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8FA726EF72320067D012 /* R.swift */; };
 		AD7C8FAE26EF75BD0067D012 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C8FAD26EF75BD0067D012 /* DebugViewController.swift */; };
 		AD7C8FB026EF76E20067D012 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7C8FAF26EF76E20067D012 /* DebugMenu.storyboard */; };
+		AD877CD427A2E84700E66A4E /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD877CD327A2E84700E66A4E /* Interface.swift */; };
 		AD8DCCAC2725B3A600431435 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD8DCCAB2725B3A600431435 /* Alamofire */; };
 		AD8DCCB22725B45600431435 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB12725B45600431435 /* AuthViewController.swift */; };
 		AD8DCCB42725C63700431435 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DCCB32725C63600431435 /* Session.swift */; };
@@ -78,6 +79,7 @@
 		AD7C8FA726EF72320067D012 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		AD7C8FAD26EF75BD0067D012 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		AD7C8FAF26EF76E20067D012 /* DebugMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DebugMenu.storyboard; sourceTree = "<group>"; };
+		AD877CD327A2E84700E66A4E /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		AD8DCCB12725B45600431435 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AD8DCCB32725C63600431435 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AD8DCCB72725CA3400431435 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				ADBD7452272AC49E00E15D24 /* GroupTableViewController..swift */,
+				AD877CD327A2E84700E66A4E /* Interface.swift */,
 				AD0F422E2742A5AB0078E088 /* FirebaseUser.swift */,
 			);
 			path = Groups;
@@ -408,6 +411,7 @@
 				AD7C8FA826EF72320067D012 /* R.swift in Sources */,
 				AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */,
 				ADEE8FF92795AC1F006896D6 /* VKAdapter.swift in Sources */,
+				AD877CD427A2E84700E66A4E /* Interface.swift in Sources */,
 				AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */,
 				AD8DCCB22725B45600431435 /* AuthViewController.swift in Sources */,
 				AD3F7CC2273933D6001CCF4F /* FriendsDB.swift in Sources */,
